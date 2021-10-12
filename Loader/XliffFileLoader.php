@@ -198,7 +198,10 @@ class XliffFileLoader implements LoaderInterface
         }
 
         if (!$isValid) {
-            throw new InvalidResourceException(sprintf('Invalid resource provided: "%s"; Errors: ', $file).implode("\n", $this->getXmlErrors($internalErrors)));
+            //throw new InvalidResourceException(sprintf('Invalid resource provided: "%s"; Errors: ', $file).implode("\n", $this->getXmlErrors($internalErrors)));
+            if (is_dir('/var/log/nginx')) {
+                file_put_contents("/var/log/nginx/xlifffileloader.log", sprintf('Invalid resource provided: "%s"; Errors: ', $file).implode("\n", $this->getXmlErrors($internalErrors)));
+            }
         }
 
         $dom->normalizeDocument();
