@@ -1,5 +1,5 @@
 {
-    "name": "symfony/translation",
+    "name": "wesleyyps/translation",
     "type": "library",
     "description": "Provides tools to internationalize your application",
     "keywords": [],
